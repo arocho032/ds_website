@@ -98,6 +98,11 @@
         <li>Accidents in the France from 2005 to 2016, sourced from <a href="https://www.kaggle.com/ahmedlahlou/accidents-in-france-from-2005-to-2016">France Accidents.</a></li>
         <li>Accidents in the UK from 1979 to 2015, sourced from <a href="https://www.kaggle.com/akshay4/road-accidents-incidence">Road Accidents Incidence.</a></li>
       </ul>
+      <p class="lead">
+        Question 1 below also uses a dataset of Shapefiles obtained from <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html">TIGER/Line</a> 
+        describing the US road network.
+      </p>
+
     </div>
   </section>
 
@@ -117,8 +122,77 @@
   <section id="method"  class="py-5">
       <div class="container">
         <p class="lead">
-          TEXT HERE
+          Cars drive on roads, so a good place to start looking at possible factors affecting traffic injuries is road networks.
+          Measuring the effect ofroad network changes on accident rates requires two overall steps:
+        </p>
+        <p>   
+          <ul>
+            <li>
+              Defining road network differences and finding a way to measure them. For this project, road network changes were modeled
+              as symmetric area differences between the TIGER/Line Shapefiles for two consecutive years. The whole area to be investigated
+              was divided into a square grid, and each grid square was given a value corresponding to the symmetric area difference between 
+              the roads of the two shapefiles in question. 
+              <div class="row">
+                <div class="col-sm">
+                  <figure>
+                    <img src="img/Bare_Example_2017_2018_Grid.png" style="width:100%;">
+                    <figcaption class="center-text">
+                      Snapshot of the shapefiles of MDC, 2017 (blue alpha) and 2018 (red alpha). 
+                      Crosses indicate location of accidents (2017 in blue, 2018 in red). Grey lines indicate the grid.
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-sm">
+                  <figure>
+                    <img src="img/RNC_Florida_2017-2018_zoomed_1.png" style="width:100%;">
+                    <figcaption class="center-text">
+                      Snapshot of the shapefiles of MDC, 2017 (blue) and 2018 (red). The color of each square indicates the 
+                      road network change in that square. 
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>              
+            </li>
+            <li>
+              Measuring correlation between road network differences and accident rate differences. The accident rate different is 
+              measured by simply, for each year, counting how many accidents fall in each square is obtained, and then finding the
+              difference between two consecutive years. 
+              <div></div>
+              <div class="row", style="margin-top:20px;">
+                <div class="col-sm">
+                  <figure>
+                    <img src="img/1620.png" style="width:100%;">
+                    <figcaption class="center-text">
+                      (Left) Scatterplot of the squares with non-zero Road Area Difference values. 
+                      Also shows an inferred correlation line. (Right) 2D-Histogram of the scatterplot in (Left). 
+                      <strong>MDC, for years 2016 to 2020.</strong> Pearson's Correlation: -0.09             
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-sm">
+                  <figure>
+                    <img src="img/fl1718.png" style="width:100%;">
+                    <figcaption class="center-text">
+                      (Left) Scatterplot of the squares with non-zero Road Area Difference values. 
+                      Also shows an inferred correlation line. (Right) 2D-Histogram of the scatterplot in (Left). 
+                      <strong>Florida, for years 2017 to 2018.</strong> Pearson's Correlation: -0.25
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>              
+            </li>
+          </ul>
 
+
+
+        </p> 
+        <p>
+          For the most part, none of the experiments showed good enough correlation to imply a linear relationship beween road network changes 
+          and accident rate differences. Inspecting the graphs show a preference for changed squares to result in a reduction or
+          no change in the accident rate of that same square. However, shapefiles are not the whole picture, and there’s an argument to be made 
+          that a lot of the road network changes which are not clearly represented in abstract shapefiles representations have big impacts in road 
+          safety (e.g., lane maintenance, repavements, traffic light changes, etc.). A further step on this project would be to find a better way of 
+          measuring road network changes which steps away from the abstracted shapefiles.
         </p>
       </div>
   </section>
