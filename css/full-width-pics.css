@@ -68,3 +68,31 @@ header {
 .text-white {
   color: white;
 }
+/* .title-text{
+  color:blue;
+  font-size: 70px;
+  text-shadow: 2px 2px crimson;
+} */
+
+.title-text{
+  color:rgb(50, 50, 50);
+  font-size: 70px; /* Changing font size */
+  background-color: white; /* Changing background color */
+  font-weight: bold; /* Making font bold */
+  border-radius: 20px; /* Making border radius */
+  width: auto; /* Making auto-sizable width */
+  height: auto; /* Making auto-sizable height */
+  padding: 10px 30px 10px 30px; /* Making space around letters */
+  box-shadow: -10px -10px #b1b1b1b5;
+}
+.title-center-text{
+  color:rgb(50, 50, 50);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.838); /* Changing background color */
+  font-weight: bold; /* Making font bold */
+  border-radius: 0px; /* Making border radius */
+  width: auto; /* Making auto-sizable width */
+  height: auto; /* Making auto-sizable height */
+  padding: 10px 30px 10px 30px; /* Making space around letters */
+  box-shadow: -10px -10px #b1b1b1b5;
+}
