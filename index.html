@@ -53,7 +53,7 @@
   <section id="motivation" class="py-5">
     <div class="container">
       <h1>Aim</h1>
-      <p class="lead">Road accidents are an enormous public health concern both in the US and abroad</p>
+      <p class="lead">Road accidents are an enormous public health concern both in the US and abroad.</p>
       <p>
         Traffic injuries have an immense financial and human cost: according to the CDC, in the U.S., they are the leading cause of death for people under 
         54 (CDC, 2020). Each year, millions of people — both driver and pedestrians — lose their lives due to crash injuries. On top of this human cost, traffic 
@@ -73,7 +73,7 @@
         each of which is tackled in its own section below:
         <ul>
           <li><strong><a href="#Q1">Question 1:</a></strong> What is the effect of road network changes on Accident rates? (Armando O.)</li>
-          <li><strong><a href="#Q2">Question 2:</a></strong> Can the severity of accidents be predicted? (Aurelien M.)</li>
+          <li><strong><a href="#Q2">Question 2:</a></strong> Can the severity of an accident be predicted? (Aurelien M.)</li>
           <li><strong><a href="#Q3">Question 3:</a></strong> What factors lead to safer driving and how can we improve driver safety? (Yassir W.)</li>
         </ul>
       </p>
@@ -297,12 +297,45 @@
           </span>
         </div>    </div>
     </section>
-    <!-- Content section -->
+ 
     <section id="method"  class="py-5">
-        <div class="container">
-          <p class="lead">
-            TEXT HERE
-          </p>
+      <div class="container">
+        <p class="lead">
+          After implementing machine learning models to understand what features were important in predicting accident safety. This section looks to explore these factors using a statistical
+           analytics approach, utilizing the chi-squared test for independence, to understand the magnitude of features found to be significant in our ML model and seek to understand exactly 
+           where improvements can be made to ensure better driver safety.
+        </p>
+        <p>
+          All of the following tests that will be discussed were performed at a 95 percent confidence level.
+        </p>
+        <p>
+          One experiment we performed was to test the effect light conditions had on accident severity. The results of the test are as follows:
+        </p>
+            <li>
+              Ho: The severity of an accident is INDEPENDENT of the light conditions at time of the accident.
+            </li>
+            <li>
+              Ha: The severity of an accident is DEPENDENT of the light conditions at time of the accident.
+            </li>
+
+            <div class="row", style="margin-top:20px;">
+              <div class="col-sm">
+                <figure>
+                  <img src="img/Q3_1.png" style="width:100%;">
+                  <figcaption class="center-text">
+                    r x c contingency table (light_conditions by accident_severity).       
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col-sm">
+                <figure>
+                  <img src="img/Q3_2.png" style="width:100%;">
+                  <figcaption class="center-text">
+                    Conditional Probability Matrix.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
         </div>
     </section>
 
