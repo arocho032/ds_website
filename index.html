@@ -81,11 +81,14 @@
   </section>
 
   <!-- Image Section> -->
-  <section id="data" class="py-5 bg-image-full" style="background-image: url(img/dataset-cover.jpg)">
-    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+  <section id="data" class="py-5 bg-image-banner" style="background-image: url(img/strip0.jpg)">
 	<div class="container ">
-		<div class="text-white banner-text" style="height: 200px;"><span><h1>Data</h1></span></div>
+    <div class="text-white banner-text" style="height: 100px;">
+		<div class="title-BG">
+      <h1 class="question-title">Data</h1>
+      </div>
 	</div>
+</div>
   </section>
   <!-- Content section -->
   <section class="py-5">
@@ -111,8 +114,10 @@
     <div class="container ">
       <div class="text-white banner-text" style="height: 200px;">
         <span>
+          <div class="title-BG">
           <h1 class="question-title">Question 1:</h1>
           <h3 class="question-subtitle">What is the effect of road network changes on Accident rates?</h3>
+          </div>
         </span>
       </div>
     </div>
@@ -186,7 +191,7 @@
 
 
         </p> 
-        <p>
+        <p class="lead">
           For the most part, none of the experiments showed good enough correlation to imply a linear relationship beween road network changes 
           and accident rate differences. Inspecting the graphs show a preference for changed squares to result in a reduction or
           no change in the accident rate of that same square. However, shapefiles are not the whole picture, and there’s an argument to be made 
@@ -202,28 +207,93 @@
     <div class="container ">
 		<div class="text-white banner-text" style="height: 200px;">
       <span>
-        <h1>Question 2:</h1>
-        <h3>Can the severity of accidents be predicted?</h3>
+        <div class="title-BG">
+          <h1 class="question-title">Question 2:</h1>
+          <h3 class="question-subtitle">Can the severity of an accident be predicted?</h3>
+        </div>
       </span>
     </div>
 	</div>
   </section>
   <!-- Content section -->
   <section id="method"  class="py-5">
-      <div class="container">
-        <p class="lead">
-          TEXT HERE
-        </p>
-      </div>
-  </section>
+    <div class="container">
+      <p class="lead">
+        The goal of this section was to determine whether the outcome of a car accident could be predicted using the given features.
+        In the dataset there is a feature called “grav” which means severity in French. This feature is categorical and is encoded to represent one of four options: 
+        1) Unscathed, 2) Light injury, 3) Hospitalized wounded, or 4) Killed. To determine whether car accident severity could be predicted, a data science and machine 
+        learning approach was taken under a series of experiments. The Random Forest (RF) classifier performed the best in all the experiments. Three of the experiments entailed 
+        predicting car accident severity in a number of classes. 
+      </p>
+      <p>   
+        <ul>
+          <li>
+            The <strong>first experiment</strong> predicted all four categories provided by the original dataset. This yielded the worst results with an overall accuracy of 61%. 
+          </li>
+          <li>
+            The <strong>second experiment</strong> predicted three categories where two categories from the first experiment were combined, “Hospitalized wounded” and “Killed”. This gave a slight 
+            improvement in overall accuracy nearing 63% but a large improvement in the precision score of the newly created combined class.  
+          </li>
+          <li>
+            The <strong>third experiment</strong> further reduced the number of classes to two by combining the “Unscathed” and “Light injury” together. This made it a binary classification problem 
+            predicting whether an accident was severe or not severe. This experiment gave the best result with an overall accuracy of about 81%. The results of this experiment are shown 
+            in the bottom right figure below. 
+          </li>
+            <div></div>
+            <div class="row", style="margin-top:20px;">
+              <div class="col-sm">
+                <figure>
+                  <img src="img/Q2_2.png" style="width:100%;">
+                  <figcaption class="center-text">
+                    Feature importance bar graph provided by Random Forest Model.        
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col-sm">
+                <figure>
+                  <img src="img/Q2_1.png" style="width:100%;">
+                  <figcaption class="center-text">
+                    Advanced confusion matrix of the RF model predicting two severity categories.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          <li>
+            The <strong>fourth experiment</strong> attempted to improve the accuracy of the binary classification problem by addressing the unbalanced class distribution. 
+            Both random under and over sampling was applied to the training set, but unfortunately, the overall accuracy did not improve.
+          </li>
+          <li>
+            The <strong>fifth and final experiment</strong> showcased a real-world use case of this problem. Perhaps it would be useful to know ahead of time what medical equipment to 
+            bring at the site of a car accident if they knew the outcome. Only features that could be known to the 911 caller or the police officer were used to train the RF model. 
+            This brought down the number of features to 22, from 32 before. With about ten less features, the overall accuracy dropped by about 8%. The precision score for the 
+            severe category also dropped significantly to 38%. Surprisingly enough however, the non-severe category remained above 80% accurate which is amazing!
+          </li>           
+          
+        </ul>
+
+
+
+      </p> 
+      <p class="lead">
+        In this section, the question of whether car accident severity could be predicted was answered in a series of experiments, one building on top of the next. 
+        The preprocessing steps were described along with all of the intuition as to why certain decisions were made. The best performing model gave an overall accuracy of 
+        81% predicting whether or not an accident was severe. This problem has many useful applications, one of which was explored in Experiment 5. For future experiments, 
+        using more sophisticated over sampling approaches like SMOTE could be beneficial. Also applying hyperparameter tuning to each of the models could probably increase 
+        the accuracies by at least a few percentages.
+
+      </p>
+    </div>
+</section>
 
     <!-- Image Section -->
     <section id="Q3" class="py-5 bg-image-banner" style="background-image: url(img/strip3.jpg)">
       <div class="container ">
         <div class="text-white banner-text" style="height: 200px;">
           <span>
-            <h1>Question 3:</h1>
-            <h3>What factors lead to safer driving and how can we improve driver safety?</h3>
+            <div class="title-BG">
+              <h1 class="question-title">Question 3:</h1>
+              <h3 class="question-subtitle">What factors lead to safer driving and how can we improve driver safety?</h3>
+            </div>
           </span>
         </div>    </div>
     </section>

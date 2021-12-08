@@ -10,6 +10,7 @@ header {
   background-color: #000;
 }
 
+
 .banner-text{
 	position: relative !important;
 }
@@ -87,18 +88,16 @@ header {
 .question-title {
   color: #232323;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.838); /* Changing background color */
-  font-weight: bold; /* Making font bold */
-  border-radius: 20px; /* Making border radius */
-  width: auto; /* Making auto-sizable width */
-  height: auto; /* Making auto-sizable height */
-  padding: 10px 30px 10px 30px; /* Making space around letters */
-  box-shadow: -10px -10px #b1b1b1b5;
 }
 
 .question-subtitle {
   color: #de4b4b;
+  font-weight: bold; /* Making font bold */
+}
+
+.title-BG {
   background-color: rgba(255, 255, 255, 0.838); /* Changing background color */
+  box-shadow: -10px -10px #b1b1b1b5;
   font-weight: bold; /* Making font bold */
   border-radius: 20px; /* Making border radius */
   width: auto; /* Making auto-sizable width */
